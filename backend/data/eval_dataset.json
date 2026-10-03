@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What are the benefits and limitations of Retrieval-Augmented Generation?",
+    "expected_topics": ["retrieval", "hallucination", "embeddings", "chunking"],
+    "required_source_types": ["academic", "general_web"],
+    "key_facts": ["RAG grounds generation in retrieved passages", "retrieval quality bounds answer quality"]
+  },
+  {
+    "question": "How has generative AI affected software development?",
+    "expected_topics": ["productivity", "developer", "coding assistant", "employment"],
+    "required_source_types": ["academic", "news"],
+    "key_facts": ["mixed productivity effects by task type", "labor market effects are disputed"]
+  },
+  {
+    "question": "What are the current challenges of autonomous AI agents?",
+    "expected_topics": ["planning", "tool use", "evaluation", "safety"],
+    "required_source_types": ["academic", "general_web"],
+    "key_facts": ["long-horizon error accumulation", "tool-use reliability", "evaluation difficulty"]
+  },
+  {
+    "question": "Compare PostgreSQL vector search with dedicated vector databases.",
+    "expected_topics": ["pgvector", "vector database", "scale", "operations"],
+    "required_source_types": ["official_documentation"],
+    "key_facts": ["pgvector simplifies operations", "dedicated vector DBs favor large scale"]
+  },
+  {
+    "question": "What are the major risks and benefits of AI in education?",
+    "expected_topics": ["tutoring", "learning outcomes", "privacy", "bias"],
+    "required_source_types": ["academic", "government"],
+    "key_facts": ["modest positive learning effects reported", "privacy and bias are cited risks"]
+  }
+]

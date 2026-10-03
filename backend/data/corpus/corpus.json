@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Retrieval-Augmented Generation: An Overview",
+    "url": "https://demo-corpus.local/rag-overview",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2024-03-12",
+    "source_type": "academic",
+    "content": "Retrieval-Augmented Generation combines a retrieval step over an external document store with a generative language model. The retrieval step reduces hallucination by grounding generated statements in retrieved passages. A key benefit of RAG is that the underlying knowledge base can be updated without retraining the language model, which is not possible with knowledge baked purely into model weights. RAG systems typically chunk documents, embed the chunks into a vector space, and retrieve the top-k most similar chunks to a query at generation time. A commonly cited limitation of RAG is retrieval quality: if the retriever returns irrelevant or low-quality passages, the generator may produce a fluent but ungrounded answer. Chunking strategy, embedding model choice, and reranking all materially affect end-to-end answer quality. Evaluation of RAG systems generally separates retrieval metrics (precision@k, recall@k) from generation metrics (faithfulness, groundedness, answer relevance)."
+  },
+  {
+    "title": "Limitations of Retrieval-Augmented Systems in Production",
+    "url": "https://demo-corpus.local/rag-limitations",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2024-11-02",
+    "source_type": "general_web",
+    "content": "While retrieval-augmented generation reduces hallucination relative to closed-book generation, it does not eliminate it: generators can still misread or overgeneralize from retrieved passages. Latency is a practical limitation, since retrieval adds an extra network or index lookup before generation begins. Cost also increases relative to closed-book generation because both an embedding model and a generative model must run per query. Another limitation is that RAG systems are only as current as their underlying document store; if the index is not refreshed, answers can be stale even though the generator itself is capable of more recent reasoning. Teams operating RAG systems in production commonly report that chunk-boundary artifacts, where a relevant fact is split across two chunks, are a leading cause of retrieval failures."
+  },
+  {
+    "title": "AI Coding Assistants and Developer Productivity: A Field Study",
+    "url": "https://demo-corpus.local/ai-coding-productivity",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2024-06-18",
+    "source_type": "academic",
+    "content": "A controlled field study of software engineers using AI coding assistants found measurable increases in task completion speed for well-specified, boilerplate-heavy tasks, with smaller or negligible gains on tasks requiring deep familiarity with a large, unfamiliar codebase. Junior developers showed larger relative productivity gains than senior developers on routine tasks, while senior developers reported the tools were more useful for exploring unfamiliar APIs than for core implementation work. The study cautions that self-reported productivity gains were consistently higher than gains measured by task completion time, suggesting a perception gap. No significant change in defect rates was observed, though the study notes defect rates may take longer than the study window to manifest."
+  },
+  {
+    "title": "AI and the Future of Software Engineering Employment",
+    "url": "https://demo-corpus.local/ai-swe-employment",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2025-01-20",
+    "source_type": "news",
+    "content": "Labor-market analysts disagree on whether AI coding tools are reducing net demand for software engineers or shifting the composition of the role toward higher-level system design, review, and specification work. Entry-level hiring in some segments of the software industry slowed in 2024, which some analysts attribute partly to AI-assisted productivity gains among existing staff, though hiring slowdowns in that period were also linked to broader macroeconomic tightening in technology spending, making causal attribution difficult. Several surveyed engineering leaders reported using AI tools primarily to accelerate prototyping and documentation rather than to reduce headcount directly."
+  },
+  {
+    "title": "Challenges Facing Autonomous AI Agents",
+    "url": "https://demo-corpus.local/autonomous-agent-challenges",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2025-02-10",
+    "source_type": "academic",
+    "content": "Autonomous AI agents that plan and execute multi-step tasks face several open challenges. Long-horizon tasks accumulate small errors at each step, and without explicit verification agents can drift far from the intended goal before an error is detected. Tool-use reliability is another challenge: agents must correctly select among available tools, format calls correctly, and interpret tool outputs, and failures at any of these stages compound across a multi-step plan. Evaluation of agentic systems is itself difficult because success is often defined by an end state rather than a single output, requiring task-specific evaluation harnesses. Safety considerations grow with agent autonomy, since agents that can take real-world actions (sending messages, making purchases, modifying files) carry higher stakes for incorrect or unintended actions than agents limited to generating text."
+  },
+  {
+    "title": "Agent Memory and State Management in Practice",
+    "url": "https://demo-corpus.local/agent-memory-state",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2024-09-05",
+    "source_type": "general_web",
+    "content": "Production agent systems commonly separate short-term working state, used within a single task execution, from longer-term memory that persists across sessions. Graph-based orchestration frameworks represent an agent workflow as nodes and edges over an explicit shared state object, which makes conditional branching (for example, looping back to search when evidence is insufficient) easier to implement and to observe than orchestration implemented purely through prompt chaining. A common failure mode reported by practitioners is unbounded state growth, where every intermediate result is retained and eventually exceeds context limits; teams address this with explicit summarization or pruning steps between agent stages."
+  },
+  {
+    "title": "Comparing pgvector to Dedicated Vector Databases",
+    "url": "https://demo-corpus.local/pgvector-vs-vector-db",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2024-08-14",
+    "source_type": "official_documentation",
+    "content": "pgvector adds approximate nearest neighbor search to PostgreSQL, allowing vector similarity search to live alongside relational data in the same transactional database. This simplifies operations for teams that already run PostgreSQL, since there is no separate system to deploy, back up, or keep consistent with the primary datastore. Dedicated vector databases are generally optimized more aggressively for large-scale approximate nearest neighbor search and can offer better throughput and lower latency at very large index sizes or high query volumes. For small to medium-sized document collections, the operational simplicity of pgvector is frequently cited as outweighing the raw performance advantage of a dedicated vector database; at large scale (tens of millions of vectors and high query-per-second requirements) dedicated vector databases are more commonly reported in production use."
+  },
+  {
+    "title": "AI Tutoring Systems: Evidence on Learning Outcomes",
+    "url": "https://demo-corpus.local/ai-education-outcomes",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2024-05-22",
+    "source_type": "academic",
+    "content": "Randomized evaluations of AI tutoring tools in secondary education have generally found modest positive effects on short-term test performance, particularly for procedural subjects like mathematics, with effect sizes comparable to some forms of human peer tutoring but smaller than one-on-one expert human tutoring. Benefits appear larger when the AI tutor is used to supplement, rather than replace, teacher-led instruction. Concerns raised in this literature include over-reliance risk, where students lean on the tool for answers rather than developing independent problem-solving skills, and equity concerns where access to high-quality AI tutoring tools is unevenly distributed across schools with different resource levels."
+  },
+  {
+    "title": "Risks of AI Deployment in Educational Settings",
+    "url": "https://demo-corpus.local/ai-education-risks",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2025-03-01",
+    "source_type": "government",
+    "content": "Education policy guidance documents commonly flag data privacy as a leading risk in deploying AI tools with minors, given the sensitivity of student data and varying legal protections across jurisdictions. A second commonly cited risk is algorithmic bias in automated grading or recommendation systems, which can systematically disadvantage certain student subgroups if training data is not representative. Guidance documents generally recommend human oversight of any AI-generated grade or recommendation that materially affects a student's academic standing, rather than fully automated decision-making."
+  },
+  {
+    "title": "Environmental Footprint of Large Language Model Training and Inference",
+    "url": "https://demo-corpus.local/llm-environmental-impact",
+    "domain": "demo-corpus.local",
+    "publisher": "ResearchPilot Demo Corpus",
+    "author": "Demo Corpus Editors",
+    "published_date": "2024-10-11",
+    "source_type": "academic",
+    "content": "Training large language models consumes substantial electricity, with reported estimates varying widely depending on model size, hardware efficiency, and the carbon intensity of the electricity grid used. Inference, run at much larger cumulative scale across many users over a model's deployed lifetime, is increasingly cited as comparable to or exceeding training energy use in aggregate for widely deployed models, though per-query inference energy is small. Water usage for datacenter cooling is a less-studied but increasingly reported environmental cost, particularly in water-stressed regions where datacenters are sited. Estimates of environmental impact differ substantially across studies due to differing assumptions about hardware utilization, grid carbon intensity, and whether embodied hardware manufacturing emissions are included, making cross-study comparison difficult."
+  }
+]
